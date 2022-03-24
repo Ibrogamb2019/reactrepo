@@ -3,6 +3,7 @@ import classes from './AddUser.module.css';
 import Card from "../UI/Card";
 import Button from "../UI/Button";
 import Wrapper from "../Helpers/Wrapper";
+import ErrorModal from "../UI/ErrorModal";
 const AddUser = props => {
 
     const [enteredUserName, setEnteredUserName] = useState('');
@@ -12,14 +13,15 @@ const AddUser = props => {
         event.preventDefault();
 
         if (enteredUserName.trim().length === 0 || enteredUserAge.trim().length === 0) {
-
             return;
+
         }
         if (+enteredUserAge < 0) {
-
             return;
+
         }
         props.onAddUser(enteredUserName, enteredUserAge);
+
         setEnteredUserAge('');
         setEnteredUserName('');
     };
@@ -35,6 +37,7 @@ const AddUser = props => {
 
     return (
         <Wrapper>
+            <ErrorModal title="Error Occurred" message="Something went wrong" />
 
             <Card className={classes.input}    >
                 <form onSubmit={addUserHandler}>

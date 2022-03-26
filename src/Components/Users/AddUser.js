@@ -50,7 +50,7 @@ const AddUser = props => {
 
             <Card className={classes.input}    >
                 <form onSubmit={addUserHandler}>
-                    <label htmlFor="username">User Name</label>
+                    <label htmlFor="username">User name</label>
                     <input type="text" id="username" ref={nameInputRef} />
                     <label htmlFor="age">Age (years)</label>
                     <input type="number" id="age" ref={ageInputRef} />

@@ -20,7 +20,7 @@ const AddUser = props => {
 
             setError({
                 title: 'Invalid Input',
-                message: 'Please enter a valid name and age'
+                message: 'Please enter a correct name and age'
             });
             return;
 
@@ -50,7 +50,7 @@ const AddUser = props => {
 
             <Card className={classes.input}    >
                 <form onSubmit={addUserHandler}>
-                    <label htmlFor="username">User name</label>
+                    <label htmlFor="username">User Name</label>
                     <input type="text" id="username" ref={nameInputRef} />
                     <label htmlFor="age">Age (years)</label>
                     <input type="number" id="age" ref={ageInputRef} />
